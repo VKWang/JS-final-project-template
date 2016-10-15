@@ -1,7 +1,7 @@
 var bglmg = document.createElement("img");
 bglmg.src = "images/map.png";
 
-var enemy =[x:0,y:0];
+var enemy ={x:0,y:0};
 var enemy = document.createElement("img");
 enemy.scr = "images/slime.gif";
 
