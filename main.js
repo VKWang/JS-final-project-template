@@ -12,7 +12,7 @@ $("#game-canvas").mousemove(function(event){cursor=("x:"+event.offsetX+"y:"+even
 var cursor = {x:0 , y:0}
 
 var towerImg = document.createElement("img");
-towerImg.src = "img/tower.png";
+towerImg.src = "images/tower.png";
 
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
