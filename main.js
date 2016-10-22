@@ -9,9 +9,8 @@ var enemyImg = document.createElement("img");
 enemyImg.src = "images/slime.gif";
 
 $("#game-canvas").mousemove(function(event){
-  cursor=("x:"+event.offsetX+"y:"+event.offsetY);
-});
-}
+  cursor=("x:"+event.offsetX+"y:"+event.offsetY);})
+;}
 var cursor = {x:0 , y:0}
 
 var towerImg = document.createElement("img");
