@@ -8,8 +8,12 @@ var enemy ={x:430,y:80};
 var enemyImg = document.createElement("img");
 enemyImg.src = "images/slime.gif";
 
-var cursor = {x:0 , y:0}
-$("#game-canvas").mousemove(function(event){cursor=(x:event.offsetX,y:event.offsetY);});
+var cursor = {x:0 , y:0};
+$("#game-canvas").mousemove(function(event){
+  cursor={
+    x:event.offsetX,y:event.offsetY
+  }
+});
 
 var towerImg = document.createElement("img");
 towerImg.src = "images/tower.png";
