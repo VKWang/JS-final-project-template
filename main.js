@@ -15,4 +15,4 @@ function draw(){
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
   ctx.drawImage(btnImg,0,0);
 }
-setTimeout(draw , 125);
+setInternsl(draw,1000/60);
