@@ -13,6 +13,6 @@ var ctx = canvas.getContext("2d");
 function draw(){
   ctx.drawImage(bglmg,0,0);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
-  ctx.drawImage(btnImg,580,420,60,60);
+  ctx.drawImage(btnImg,578,418,62,62);
 }
 setInterval(draw,1000/60);
