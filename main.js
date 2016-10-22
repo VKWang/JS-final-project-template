@@ -4,7 +4,7 @@ bglmg.src = "images/map.png";
 var btnImg = document.createElement("img");
 btnImg.scr = "images/tower.png";
 
-var enemy ={x:400,y:400};
+var enemy ={x:640,y:480};
 var enemyImg = document.createElement("img");
 enemyImg.src = "images/slime.gif";
 
