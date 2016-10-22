@@ -1,8 +1,8 @@
 var bglmg = document.createElement("img");
 bglmg.src = "images/map.png";
 
-var btnImg = document.createElement("img")
-btnImg.scr = "images/tower-btn.png"
+var btnImg = document.createElement("img");
+btnImg.scr = "images/tower-btn.png";
 
 var enemy ={x:0,y:0};
 var enemyImg = document.createElement("img");
