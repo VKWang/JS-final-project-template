@@ -13,6 +13,6 @@ var ctx = canvas.getContext("2d");
 function draw(){
   ctx.drawImage(bglmg,0,0);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
-  ctx.drawImage(btnImg,300,300);
+  ctx.drawImage(btnImg,0,0);
 }
 setTimeout(draw , 125);
