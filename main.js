@@ -2,9 +2,9 @@ var bglmg = document.createElement("img");
 bglmg.src = "images/map.png";
 
 var btnImg = document.createElement("img");
-btnImg.src = "images/tower.png";
+btnImg.src = "images/tower-btn.png";
 
-var enemy ={x:600,y:450};
+var enemy ={x:400,y:40};
 var enemyImg = document.createElement("img");
 enemyImg.src = "images/slime.gif";
 
