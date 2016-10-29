@@ -8,23 +8,6 @@ enemyImg.src = "images/slime.gif";
 var btnImg = document.createElement("img");
 btnImg.src = "images/tower-btn.png";
 
-function isCollided(pointX,pointY,targetX,targetY,targetWidth,targetLenth){
-  if(   pointX >= targetX
-     && pointX <= targetX+targetWidth
-     && pointY >= targetY
-     && pointY <= targetY+targetLenth){
-    return true
-  }else{
-    return false
-}
-
-var cursor = {x:0 , y:0};
-$("#game-canvas").mousemove(function(event){
-  cursor={
-    x:event.offsetX,y:event.offsetY
-  }
-});
-
 var towerImg = document.createElement("img");
 towerImg.src = "images/tower.png";
 
@@ -41,13 +24,28 @@ setInterval(draw,1000/60);
   
 var isBuilding = false;
 var tower = {};
-var cursor = {};
+var cursor = {x:0 , y:0};
+$("#game-canvas").mousemove(function(event){
+  cursor={
+    x:event.offsetX,y:event.offsetY
+  }
+});
 
 $("#game-canvas").on(click , function(){
   if(isCollided(cursor.x,cursor.y,640-62,480-62,62,62)){
-    if(isBuilding=false){
-      isBuilding = true;
-    }else{
+    if(isBuilding){
       isBuilding = false;
+    }else{
+      isBuilding = true;
     }
     ;};
+
+function isCollided(pointX,pointY,targetX,targetY,targetWidth,targetLenth){
+  if(   pointX >= targetX
+     && pointX <= targetX+targetWidth
+     && pointY >= targetY
+     && pointY <= targetY+targetLenth){
+    return true
+  }else{
+    return false
+}
