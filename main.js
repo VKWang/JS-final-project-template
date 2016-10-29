@@ -38,15 +38,18 @@ $("#game-canvas").on(click , function(){
     }else{
       isBuilding = true;
     }
+    else if(){
+            
+            }
     ;};
 
 //function isCollided(pointX,pointY,targetX,targetY,targetWidth,targetLenth){
-  if(   pointX >= targetX
-     && pointX <= targetX+targetWidth
-     && pointY >= targetY
-     && pointY <= targetY+targetLenth){
-    return true;
-  } else {
-    return false;
-  }
-}
+  //if(   pointX >= targetX
+     //&& pointX <= targetX+targetWidth
+     //&& pointY >= targetY
+     //&& pointY <= targetY+targetLenth){
+    //return true;
+  //} else {
+    //return false;
+  //}
+//}
