@@ -39,7 +39,7 @@ $("#game-canvas").on("click" , function(){
       tower.x=cursor.x;
       tower.y=cursor.y;
       isBuilding = false;
-      draw({ctx.drawImage(towerImg,tower.x,tower.y);)}
+      draw(ctx.drawImage(towerImg,tower.x,tower.y);)}
     }
 });;
 
