@@ -17,12 +17,11 @@ function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
   ctx.drawImage(btnImg,578,418,64,64);
-  ctx.drawImage(towerImg,cursor.x,cursor.y);
+  //ctx.drawImage(towerImg,cursor.x,cursor.y);
   ctx.drawImage(towerImg,tower.x,tower.y);
 }
 setInterval(draw,1000/60);
-  
-var FPS = 60;
+
 var isBuilding = false;
 var tower = {};
 var cursor = {x:0,y:0};
@@ -44,8 +43,8 @@ $("#game-canvas").on("click" , function(){
       tower.x=cursor.x;
       tower.y=cursor.y;
       isBuilding = false;
-    }});
-    ;
+    }
+});;
 
 function isCollided(pointX,pointY,targetX,targetY,targetWidth,targetLenth){
   if(   pointX >= targetX
