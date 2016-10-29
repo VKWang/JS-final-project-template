@@ -8,8 +8,6 @@ enemyImg.src = "images/slime.gif";
 var btnImg = document.createElement("img");
 btnImg.src = "images/tower-btn.png";
 
-var towerImg = document.createElement("img");
-towerImg.src = "images/tower.png";
 
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
@@ -22,6 +20,10 @@ function draw(){
 }
 setInterval(draw,1000/60);
 
+function build(isBuilding !== false){
+  var towerImg = document.createElement("img");
+  towerImg.src = "images/tower.png";
+}
 var isBuilding = false;
 var tower = {};
 var cursor = {x:0,y:0};
