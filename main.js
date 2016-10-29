@@ -45,7 +45,8 @@ function isCollided(pointX,pointY,targetX,targetY,targetWidth,targetLenth){
      && pointX <= targetX+targetWidth
      && pointY >= targetY
      && pointY <= targetY+targetLenth){
-    return true
+    return true;
   }else{
-    return false
-  }}}}}
+    return false;
+  }
+}
