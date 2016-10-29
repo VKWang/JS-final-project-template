@@ -13,6 +13,7 @@ function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(btnImg,578,418,64,64);
   ctx.drawImage(towerImg,tower.x,tower.y);
+  if(isBuilding){ctx.drawImage(towerImg,tower.x,tower.y);}
 }
 setInterval(draw,1000/60);
 
@@ -39,7 +40,7 @@ $("#game-canvas").on("click" , function(){
       tower.x=cursor.x;
       tower.y=cursor.y;
       isBuilding = false;
-      draw(ctx.drawImage(towerImg,tower.x,tower.y);)}
+    
     }
 });;
 
