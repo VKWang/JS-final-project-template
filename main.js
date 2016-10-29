@@ -18,6 +18,7 @@ function draw(){
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
   ctx.drawImage(btnImg,578,418,62,62);
   ctx.drawImage(towerImg,cursor.x,cursor.y);
+   ctx.drawImage(towerImg,tower.x,tower.y);
 }
 
 setInterval(draw,1000/60);
@@ -33,10 +34,12 @@ $("#game-canvas").mousemove(function(event){
 
 $("#game-canvas").on(click , function(){
   if(isCollided(cursor.x,cursor.y,640-62,480-62,62,62)){
-    if(isBuilding){
+    if(isBuilding = true){
       isBuilding = false;
     }else if(isBuilding){
-      isBuilding = true;
+      toweer.x=cursor.x;
+      tower.y=cursor.y;
+      isBuilding = false;
     }
     ;};
 
