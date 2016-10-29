@@ -20,7 +20,7 @@ function draw(){
 }
 setInterval(draw,1000/60);
 
-function build(isBuilding !== false){
+function build(isBuilding() !== false){
   var towerImg = document.createElement("img");
   towerImg.src = "images/tower.png";
 }
