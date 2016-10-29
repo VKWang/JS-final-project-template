@@ -19,7 +19,7 @@ setInterval(draw,1000/60);
 
 
 
-var isBuilding = true;
+var isBuilding = false;
 var tower = {};
 var cursor = {x:0,y:0};
 $("#game-canvas").mousemove(function(event){
