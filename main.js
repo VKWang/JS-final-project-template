@@ -16,7 +16,7 @@ var ctx = canvas.getContext("2d");
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
-  ctx.drawImage(btnImg,578,418,62,62);
+  ctx.drawImage(btnImg,578,418,64,64);
   ctx.drawImage(towerImg,cursor.x,cursor.y);
    ctx.drawImage(towerImg,tower.x,tower.y);
 }
