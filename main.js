@@ -53,3 +53,4 @@ function isCollided(pointX,pointY,targetX,targetY,targetWidth,targetLenth){
     return false;
   }
 }}
+)
