@@ -37,7 +37,7 @@ $("#game-canvas").on(click , function(){
     if(isBuilding = true){
       isBuilding = false;
     }else if(isBuilding){
-      toweer.x=cursor.x;
+      tower.x=cursor.x;
       tower.y=cursor.y;
       isBuilding = false;
     }
@@ -52,4 +52,4 @@ function isCollided(pointX,pointY,targetX,targetY,targetWidth,targetLenth){
   } else {
     return false;
   }
-}
+}}
