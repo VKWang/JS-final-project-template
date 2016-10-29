@@ -17,6 +17,7 @@ function draw(){
 setInterval(draw,1000/60);
 
 
+
 var isBuilding = true;
 var tower = {};
 var cursor = {x:0,y:0};
@@ -38,6 +39,7 @@ $("#game-canvas").on("click" , function(){
       tower.x=cursor.x;
       tower.y=cursor.y;
       isBuilding = false;
+      draw(){ctx.drawImage(towerImg,tower.x,tower.y);}
     }
 });;
 
