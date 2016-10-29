@@ -32,7 +32,7 @@ $("#game-canvas").mousemove(function(event){
   }
 });
 
-$("#game-canvas").on(click , function(){
+$("#game-canvas").on("click" , function(){
   if(isCollided(cursor.x,cursor.y,640-62,480-62,62,62)){
     if(isBuilding){
       isBuilding = false;
