@@ -44,7 +44,7 @@ var tower = {};
 var cursor = {};
 
 $("#game-canvas").on(click , function(){
-  if(isCollided(cursor.x,cursor.y.,640-62,480-62,62,62)){
+  if(isCollided(cursor.x,cursor.y,640-62,480-62,62,62)){
     if(isBuilding=false){
       isBuilding = true;
     }else{
