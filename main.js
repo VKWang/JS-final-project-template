@@ -34,13 +34,17 @@ $("#game-canvas").mousemove(function(event){
 
 $("#game-canvas").on(click , function(){
   if(isCollided(cursor.x,cursor.y,640-62,480-62,62,62)){
-    if(isBuilding = true){
+    if(isBuilding){
       isBuilding = false;
-    }else if(isBuilding){
+    }
+     else{
+     isBuillding =true;
+     }
+  }else if(isBuilding){
       tower.x=cursor.x;
       tower.y=cursor.y;
       isBuilding = false;
-    })};
+    }});
     ;
 
 function isCollided(pointX,pointY,targetX,targetY,targetWidth,targetLenth){
