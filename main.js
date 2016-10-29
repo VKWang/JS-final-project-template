@@ -1,5 +1,5 @@
 var bgImg = document.createElement("img");
-bglmg.src = "images/map.png";
+bgImg.src = "images/map.png";
 
 var enemy ={x:430,y:80};
 var enemyImg = document.createElement("img");
