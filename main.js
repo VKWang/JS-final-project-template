@@ -40,13 +40,13 @@ $("#game-canvas").on(click , function(){
     }
     ;};
 
-//function isCollided(pointX,pointY,targetX,targetY,targetWidth,targetLenth){
-  //if(   pointX >= targetX
-     //&& pointX <= targetX+targetWidth
-     //&& pointY >= targetY
-     //&& pointY <= targetY+targetLenth){
-    //return true;
-  //} else {
-    //return false;
-  //}
-//}
+function isCollided(pointX,pointY,targetX,targetY,targetWidth,targetLenth){
+  if(   pointX >= targetX
+     && pointX <= targetX+targetWidth
+     && pointY >= targetY
+     && pointY <= targetY+targetLenth){
+    return true;
+  } else {
+    return false;
+  }
+}
