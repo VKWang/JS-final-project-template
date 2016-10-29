@@ -50,4 +50,4 @@ $("#game-canvas").on(click , function(){
     }else{
       isBuilding = false;
     }
-    ;})
+    ;});
