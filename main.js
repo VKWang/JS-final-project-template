@@ -1,13 +1,11 @@
 var bgImg = document.createElement("img");
 bgImg.src = "images/map.png";
 
-var enemy ={x:430,y:80};
-var enemyImg = document.createElement("img");
-enemyImg.src = "images/slime.gif";
-
 var btnImg = document.createElement("img");
 btnImg.src = "images/tower-btn.png";
 
+var towerImg = document.createElement("img");
+towerImg.src = "images/tower.png";
 
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
@@ -15,16 +13,12 @@ function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
   ctx.drawImage(btnImg,578,418,64,64);
-  //ctx.drawImage(towerImg,cursor.x,cursor.y);
   ctx.drawImage(towerImg,tower.x,tower.y);
 }
 setInterval(draw,1000/60);
 
-function build(isBuilding){
-  var towerImg = document.createElement("img");
-  towerImg.src = "images/tower.png";
-}
-var isBuilding = false;
+
+var isBuilding = true;
 var tower = {};
 var cursor = {x:0,y:0};
 $("#game-canvas").mousemove(function(event){
