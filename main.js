@@ -10,7 +10,7 @@ towerImg.src = "images/tower.png";
 var slimeImg = document.createElement("img");
 slimeImg.src = "images/slime.gif";
 
-var enemy = {x:96,y:448}; 
+var enemy = {x:96,y:448,speedx,speedy}; 
 
 var enemyPath = [
                  {x:96,y:448},
@@ -63,7 +63,7 @@ function draw(){
   ctx.drawImage(towerImg,tower.x,tower.y);
   ctx.drawImage(slimeImg,96,448);
   if(isBuilding){
-    ctx.drawImage(towerImg,tower.x,tower.y);
+    ctx.drawImage(towerImg,cursor.x,cursor.y);
   }
 }
 
