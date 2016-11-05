@@ -60,9 +60,9 @@ var ctx = canvas.getContext("2d");
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(btnImg,578,418,64,64);
-  ctx.drawImage(towerImg,cursor.x,cursor.y);
+  ctx.drawImage(towerImg,tower.x,tower.y);
   if(isBuilding){
-    ctx.drawImage(towerImg,tower.x,tower.y);
+    ctx.drawImage(towerImg,cursor.x,cursor.y);
   }
   ctx.drawImage(slimeImg,96,448);
 }
