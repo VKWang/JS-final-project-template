@@ -29,7 +29,13 @@ function draw(){
   ctx.drawImage(towerImg,tower.x,tower.y);
   if(isBuilding){ctx.drawImage(towerImg,cursor.x-(cursor.x%32),cursor.y-(cursor.y%32));}
   ctx.drawImage(slimeImg,96,448);
-  ctx.drawImage(climeImg,96,64);
+  ctx.drawImage(slimeImg,96,64);
+  ctx.drawImage(slimeImg,384,64);
+  ctx.drawImage(slimeImg,384,182);
+  ctx.drawImage(slimeImg,224,182);
+  ctx.drawImage(slimeImg,224,364);
+  ctx.drawImage(slimeImg,384,364);
+  ctx.drawImage(slimeImg,384,140);
 }
 setInterval(draw,1000/60);
 
