@@ -28,9 +28,8 @@ function draw(){
   ctx.drawImage(btnImg,578,418,64,64);
   ctx.drawImage(towerImg,tower.x,tower.y);
   if(isBuilding){ctx.drawImage(towerImg,cursor.x-(cursor.x%32),cursor.y-(cursor.y%32));}
-  ctx.drawImage(slimeImg,enemyPath[0]);
-  ctx.drawImage(slimeImg,enemyPath[1]);
-  ctx.drawImage(slimeImg,enemyPath[2]);
+  ctx.drawImage(slimeImg,96,448);
+  ctx.drawImage(climeImg,96,64);
 }
 setInterval(draw,1000/60);
 
