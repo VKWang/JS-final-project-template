@@ -36,8 +36,8 @@ $("#game-canvas").on("click" , function(){
      isBuilding = true;
      }
   }else if(isBuilding){
-      tower.x=cursor.x-cursor%32;
-      tower.y=cursor.y-cursor%32;
+      tower.x=cursor.x-(cursor.x%32);
+      tower.y=cursor.y-(cursor.y%32);
       isBuilding = false;
     }
 });;
@@ -60,7 +60,6 @@ var ctx = canvas.getContext("2d");
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(btnImg,578,418,64,64);
-  ctx.drawImage(towerImg,tower.x,tower.y);
   if(isBuilding){
     ctx.drawImage(towerImg,tower.x,tower.y);
   }
