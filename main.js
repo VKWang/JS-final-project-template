@@ -68,3 +68,4 @@ function draw(){
 }
 
 setInterval(draw,1000/60);
+//for_help_nick66551
