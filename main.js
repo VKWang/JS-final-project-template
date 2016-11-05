@@ -36,8 +36,8 @@ $("#game-canvas").on("click" , function(){
      isBuilding = true;
      }
   }else if(isBuilding){
-      tower.x=cursor.x;
-      tower.y=cursor.y;
+      tower.x=cursor.x-(cursor.x%32);
+      tower.y=cursor.y-(cursor.y%32);
       isBuilding = false;
     }
 });;
@@ -61,10 +61,10 @@ function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(btnImg,578,418,64,64);
   ctx.drawImage(towerImg,tower.x,tower.y);
+  ctx.drawImage(slimeImg,96,448);
   if(isBuilding){
     ctx.drawImage(towerImg,cursor.x,cursor.y);
   }
-  ctx.drawImage(slimeImg,96,448);
 }
 
 setInterval(draw,1000/60);
