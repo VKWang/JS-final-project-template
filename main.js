@@ -63,7 +63,7 @@ function draw(){
   ctx.drawImage(towerImg,tower.x,tower.y);
   ctx.drawImage(slimeImg,96,448);
   if(isBuilding){
-    ctx.drawImage(towerImg,cursor.x-(cursor.x%32),cursor.y-(cursor.y%32));
+    ctx.drawImage(towerImg,tower.x,tower.y);
   }
 }
 
