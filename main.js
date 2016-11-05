@@ -7,9 +7,10 @@ btnImg.src = "images/tower-btn.png";
 var towerImg = document.createElement("img");
 towerImg.src = "images/tower.png";
 
-var slimeImg = document.createElement("img");
+var slimeImg = document.createElement("img"); start = {x:96,y:448};
 slimeImg.src = "images/slime.gif";
-var enemy = {x:96,y:448};
+var enemy = {x:96,y:64}; 
+
 
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
