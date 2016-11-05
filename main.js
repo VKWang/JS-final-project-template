@@ -31,8 +31,8 @@ function draw(){
   ctx.drawImage(slimeImg,96,448);
   ctx.drawImage(slimeImg,96,64);
   ctx.drawImage(slimeImg,384,64);
-  ctx.drawImage(slimeImg,384,182);
-  ctx.drawImage(slimeImg,224,182);
+  ctx.drawImage(slimeImg,384,282);
+  ctx.drawImage(slimeImg,224,282);
   ctx.drawImage(slimeImg,224,364);
   ctx.drawImage(slimeImg,384,364);
   ctx.drawImage(slimeImg,384,140);
