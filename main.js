@@ -13,7 +13,7 @@ function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(btnImg,578,418,64,64);
   ctx.drawImage(towerImg,tower.x,tower.y);
-  if(isBuilding){ctx.drawImage(towerImg,cursor.x,cursor.y);}
+  if(isBuilding){ctx.drawImage(towerImg,cursor.x-(crusor.x%32),cursor.y-(crusor.y%32));}
 }
 setInterval(draw,1000/60);
 
