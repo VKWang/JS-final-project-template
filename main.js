@@ -9,30 +9,14 @@ towerImg.src = "images/tower.png";
 
 var slimeImg = document.createElement("img");
 slimeImg.src = "images/slime.gif";
-var enemy = {x:96,y:448}; 
+
+var enemy = {}; 
+
 var enemyPath = [
                  {x:96,y:448},
                  {x:96,y:64},
-                 {x:384,y:64},
-                 {x:384,y:182},
-                 {x:224,y:182},
-                 {x:224,y:364},
-                 {x:384,y:364},
-                 {x:384,y:140}
+                 {x:384,y:64}
 ];
-
-var canvas = document.getElementById("game-canvas");
-var ctx = canvas.getContext("2d");
-function draw(){
-  ctx.drawImage(bgImg,0,0);
-  ctx.drawImage(btnImg,578,418,64,64);
-  ctx.drawImage(towerImg,tower.x,tower.y);
-  if(isBuilding){ctx.drawImage(towerImg,cursor.x-(cursor.x%32),cursor.y-(cursor.y%32));}
-  ctx.drawImage(slimeImg,96,448);
-}
-setInterval(draw,60/FPS);
-
-
 
 var isBuilding = false;
 var tower = {};
@@ -58,9 +42,8 @@ $("#game-canvas").on("click" , function(){
       tower.x=cursor.x;
       tower.y=cursor.y;
       isBuilding = false;
-    
     }
-});;
+});;;
 
 function isCollided(pointX,pointY,targetX,targetY,targetWidth,targetLenth){
   if(   pointX >= targetX
@@ -72,3 +55,17 @@ function isCollided(pointX,pointY,targetX,targetY,targetWidth,targetLenth){
     return false;
   }
 }
+
+var canvas = document.getElementById("game-canvas");
+var ctx = canvas.getContext("2d");
+function draw(){
+  ctx.drawImage(bgImg,0,0);
+  ctx.drawImage(btnImg,578,418,64,64);
+  ctx.drawImage(towerImg,tower.x,tower.y);
+  if(isBuilding){
+    ctx.drawImage(towerImg,cursor.x-(cursor.x%32),cursor.y-(cursor.y%32));
+  }
+  ctx.drawImage(slimeImg,96,448);
+}
+
+setInterval(draw,60/FPS);
