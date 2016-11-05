@@ -10,7 +10,7 @@ towerImg.src = "images/tower.png";
 var slimeImg = document.createElement("img");
 slimeImg.src = "images/slime.gif";
 
-var enemy = {x:96,y:448,speedx,speedy}; 
+var enemy = {x:96,y:448}; 
 
 var enemyPath = [
                  {x:96,y:448},
