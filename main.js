@@ -67,4 +67,4 @@ function draw(){
   ctx.drawImage(slimeImg,96,448);
 }
 
-setInterval(draw,60/FPS);
+setInterval(draw,1000/60);
