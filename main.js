@@ -7,6 +7,7 @@ towerImg.src = "images/tower.png";
 var slimeImg = document.createElement("img");
 slimeImg.src = "images/slime.gif";
 
+var FPS = 64;
 var enemy = {
   x:96,
   y:448,
@@ -23,7 +24,12 @@ var enemyPath = [
   {x:96,y:64},
   {x:384,y:64}
 ];
-var FPS = 64;
+var btn = {
+  x:578,
+  y:418,
+  width:64,
+  height:64
+};
 var isBuilding = false;
 var tower = {
   width:32,
@@ -68,7 +74,7 @@ var ctx = canvas.getContext("2d");
 
 function draw(){
   ctx.drawImage(bgImg,0,0);
-  ctx.drawImage(btnImg,578,418,64,64);
+  ctx.drawImage(btnImg,btn.x,btn.y,btn.width,btn.height);
   ctx.drawImage(slimeImg,enemy.x,enemy.y);
   ctx.drawImage(towerImg,tower.x,tower.y,tower.width,tower.height);
   if(isBuilding){
