@@ -1,16 +1,12 @@
 var bgImg = document.createElement("img");
 bgImg.src = "images/map.png";
-
 var btnImg = document.createElement("img");
 btnImg.src = "images/tower-btn.png";
-
 var towerImg = document.createElement("img");
 towerImg.src = "images/tower.png";
-
 var slimeImg = document.createElement("img");
 slimeImg.src = "images/slime.gif";
-
-var enemy = {x:96,y:448,speedX,speedY}; 
+var enemy = {x:96,y:448,speedx:0,speedy:-60}; 
 
 var enemyPath = [
                  {x:96,y:448},
@@ -67,5 +63,5 @@ function draw(){
   }
 }
 
-setInterval(draw,1000/60);
+var FPS = 60;
 //for_help_nick66551
