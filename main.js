@@ -6,12 +6,17 @@ var towerImg = document.createElement("img");
 towerImg.src = "images/tower.png";
 var slimeImg = document.createElement("img");
 slimeImg.src = "images/slime.gif";
-var enemy = {x:96,y:448,speedx:0,speedy:-60}; 
 
+var enemy = {
+  x:96,
+  y:448,
+  speedx:0,
+  speedy:-60
+}; 
 var enemyPath = [
-                 {x:96,y:448},
-                 {x:96,y:64},
-                 {x:384,y:64}
+  {x:96,y:448},
+  {x:96,y:64},
+  {x:384,y:64}
 ];
 var FPS = 60;
 var isBuilding = false;
@@ -56,7 +61,7 @@ var ctx = canvas.getContext("2d");
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(btnImg,578,418,64,64);
-  ctx.drawImage(slimeImg,96,448);
+  ctx.drawImage(slimeImg,enemy.x,enemy.y);
   ctx.drawImage(towerImg,tower.x,tower.y,32,32);
   if(isBuilding){
     ctx.drawImage(towerImg,cursor.x-(cursor.x%32),cursor.y-(cursor.y%32),32,32);
