@@ -20,7 +20,10 @@ var enemyPath = [
 ];
 var FPS = 60;
 var isBuilding = false;
-var tower = {};
+var tower = {
+  width:32,
+  height:32
+};
 var cursor = {x:0,y:0};
 $("#game-canvas").mousemove(function(event){
   cursor={
@@ -62,7 +65,7 @@ function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(btnImg,578,418,64,64);
   ctx.drawImage(slimeImg,enemy.x,enemy.y);
-  ctx.drawImage(towerImg,tower.x,tower.y,32,32);
+  ctx.drawImage(towerImg,tower.x,tower.y,tower.width,tower.height);
   if(isBuilding){
     ctx.drawImage(towerImg,cursor.x-(cursor.x%32),cursor.y-(cursor.y%32),32,32);
   }
