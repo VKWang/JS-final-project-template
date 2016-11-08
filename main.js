@@ -13,7 +13,7 @@ var enemyPath = [
                  {x:96,y:64},
                  {x:384,y:64}
 ];
-
+var FPS = 60;
 var isBuilding = false;
 var tower = {};
 var cursor = {x:0,y:0};
@@ -63,5 +63,5 @@ function draw(){
   }
 }
 
-var FPS = 60;
+setInterval(draw , 1000/FPS);
 //for_help_nick66551
