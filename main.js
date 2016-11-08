@@ -13,10 +13,10 @@ var enemy = {
   y:448,
   speedx:0,
   speedy:-64,
-  move:function (){
+  move: function (){
     alert("Attack~");
-    this.x=this.x+this.speedx/FPS;
-    this.y=this.y+this.speedy/FPS;
+    this.x = this.x+this.speedx/FPS;
+    this.y = this.y+this.speedy/FPS;
   }
 }; 
 var enemyPath = [
@@ -76,6 +76,7 @@ function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(btnImg,btn.x,btn.y,btn.width,btn.height);
   ctx.drawImage(slimeImg,enemy.x,enemy.y);
+  enemy.move();
   ctx.drawImage(towerImg,tower.x,tower.y,tower.width,tower.height);
   if(isBuilding){
     ctx.drawImage(towerImg,cursor.x-(cursor.x%32),cursor.y-(cursor.y%32),32,32);
