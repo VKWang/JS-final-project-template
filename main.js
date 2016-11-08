@@ -11,14 +11,19 @@ var enemy = {
   x:96,
   y:448,
   speedx:0,
-  speedy:-60
+  speedy:-64,
+  move:function (){
+    alert("Attack~");
+    this.x=this.x+this.speedx/FPS;
+    this.y=this.y+this.speedy/FPS;
+  }
 }; 
 var enemyPath = [
   {x:96,y:448},
   {x:96,y:64},
   {x:384,y:64}
 ];
-var FPS = 60;
+var FPS = 64;
 var isBuilding = false;
 var tower = {
   width:32,
