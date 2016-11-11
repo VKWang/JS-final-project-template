@@ -6,29 +6,29 @@ var towerImg = document.createElement("img");
 towerImg.src = "images/tower.png";
 var slimeImg = document.createElement("img");
 slimeImg.src = "images/slime.gif";
-alert(enemyPathx[0]);
+var enemyTarget = 0;
 var FPS = 64;
+var enemyPath = [
+  {x:96,y:448,speedx:0,speedy:0},
+  {x:96,y:64,speedx:0,speedy:-64},
+  {x:384,y:64,speedx:64,speedy:0}
+];
 var enemy = {
   x:96,
   y:448,
-  speedx:0,
-  speedy:-64,
+  path:0,
   move: function (){
-    this.x = this.x+this.speedx/FPS;
-    this.y = this.y+this.speedy/FPS;
-    //if(isCollided(enemy.x,enemy.y,)){}
+    if(isCollided(enemyPath[this.path].x,enemyPath[this.path].y,this.x,this.y,64/FPS,64/FPS)){
+      this.x = enemyPath[this.path].x;
+      this.y = enemyPath[this.path].y;
+      this.path++;
+    }else{
+      this.x=this.x+enemyPath[this.path].speedx/FPS;
+      this.y=this.y+enemy[this.path].speedy/FPS;
+    }
   }
 }; 
-var enemyPathx = [
-  96,
-  96,
-  384
-];
-var enemyPathy = [
-  448,
-  64,
-  64
-];
+
 var btn = {
   x:578,
   y:418,
