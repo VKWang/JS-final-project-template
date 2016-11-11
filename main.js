@@ -31,7 +31,7 @@ var enemy = {
     }
   }
 }; 
-
+alert(enemy.path);
 var btn = {
   x:578,
   y:418,
