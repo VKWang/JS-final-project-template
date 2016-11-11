@@ -15,6 +15,7 @@ var enemyPath = [
   {x:384,y:192,speedx:0,speedy:64},
   {x:224,y:192,speedx:-64,speedy:0},
   {x:224,y:320,speedx:0,speedy:64},
+  {x:544,y:320,speedx:64,speedy:0},
   {x:0,y:0,speedx:0,speedy:0}
 ];
 var enemy = {
