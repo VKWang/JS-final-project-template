@@ -23,7 +23,7 @@ var enemy = {
        if(this.path <= enemyPath.lenght){
       this.x = enemyPath[this.path].x;
       this.y = enemyPath[this.path].y;
-      this.path++;
+      this.path+1;
     }
   }else if(this.path <= enemyPath.length){
       this.x = this.x + enemyPath[this.path].speedx / FPS;
