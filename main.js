@@ -6,12 +6,13 @@ var towerImg = document.createElement("img");
 towerImg.src = "images/tower.png";
 var slimeImg = document.createElement("img");
 slimeImg.src = "images/slime.gif";
-var enemyTarget = 0;
+
 var FPS = 64;
 var enemyPath = [
   {x:96,y:448,speedx:0,speedy:0},
   {x:96,y:64,speedx:0,speedy:-64},
-  {x:384,y:64,speedx:64,speedy:0}
+  {x:384,y:64,speedx:64,speedy:0},
+  {x:384,y:192,speedx:0,speedy:64}
 ];
 var enemy = {
   x:96,
@@ -22,9 +23,9 @@ var enemy = {
       this.x = enemyPath[this.path].x;
       this.y = enemyPath[this.path].y;
       this.path++;
-    }else{
-      this.x=this.x+enemyPath[this.path].speedx/FPS;
-      this.y=this.y+enemyPath[this.path].speedy/FPS;
+    }else if(this.path <== enemyPath.length){
+      this.x = this.x + enemyPath[this.path].speedx / FPS;
+      this.y = this.y + enemyPath[this.path].speedy / FPS;
     }
   }
 }; 
