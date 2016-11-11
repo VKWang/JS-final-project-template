@@ -6,7 +6,7 @@ var towerImg = document.createElement("img");
 towerImg.src = "images/tower.png";
 var slimeImg = document.createElement("img");
 slimeImg.src = "images/slime.gif";
-
+alert("enemyPath[0]");
 var FPS = 64;
 var enemy = {
   x:96,
@@ -16,6 +16,7 @@ var enemy = {
   move: function (){
     this.x = this.x+this.speedx/FPS;
     this.y = this.y+this.speedy/FPS;
+    //if(isCollided(enemy.x,enemy.y,)){}
   }
 }; 
 var enemyPath = [
