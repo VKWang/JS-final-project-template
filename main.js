@@ -12,8 +12,9 @@ var enemyPath = [
   {x:96,y:448,speedx:0,speedy:0},
   {x:96,y:64,speedx:0,speedy:-64},
   {x:384,y:64,speedx:64,speedy:0},
-  {x:384,y:192,speedx:0,speedy:64}
-];alert(enemyPath.length);
+  {x:384,y:192,speedx:0,speedy:64},
+  {x:384,y:192,speedx:0,speedy:0}
+];
 var enemy = {
   x:96,
   y:448,
@@ -41,6 +42,7 @@ var tower = {
   width:32,
   height:32
 };
+
 var cursor = {x:0,y:0};
 $("#game-canvas").mousemove(function(event){
   cursor={
@@ -87,7 +89,6 @@ function draw(){
   if(isBuilding){
     ctx.drawImage(towerImg,cursor.x-(cursor.x%32),cursor.y-(cursor.y%32),32,32);
   }
-  alert(enemy.path);
 }
 
 setInterval(draw , 1000/FPS);
