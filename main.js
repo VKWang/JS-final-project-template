@@ -24,7 +24,7 @@ var enemy = {
       this.path++;
     }else{
       this.x=this.x+enemyPath[this.path].speedx/FPS;
-      this.y=this.y+enemy[this.path].speedy/FPS;
+      this.y=this.y+enemyPath[this.path].speedy/FPS;
     }
   }
 }; 
