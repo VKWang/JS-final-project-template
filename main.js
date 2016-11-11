@@ -6,7 +6,7 @@ var towerImg = document.createElement("img");
 towerImg.src = "images/tower.png";
 var slimeImg = document.createElement("img");
 slimeImg.src = "images/slime.gif";
-alert("enemyPath[0]");
+alert(enemyPath[0]);
 var FPS = 64;
 var enemy = {
   x:96,
