@@ -20,11 +20,9 @@ var enemy = {
   path:0,
   move: function (){
     if(isCollided(enemyPath[this.path].x,enemyPath[this.path].y,this.x,this.y,64/FPS,64/FPS)){
-       if(this.path <= enemyPath.lenght){
       this.x = enemyPath[this.path].x;
       this.y = enemyPath[this.path].y;
-      this.path+1;
-    }
+      this.path++;
   }else if(this.path <= enemyPath.length){
       this.x = this.x + enemyPath[this.path].speedx / FPS;
       this.y = this.y + enemyPath[this.path].speedy / FPS;
