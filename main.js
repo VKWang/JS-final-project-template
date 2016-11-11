@@ -31,7 +31,7 @@ var enemy = {
     }
   }
 }; 
-alert(enemy.path);
+
 var btn = {
   x:578,
   y:418,
@@ -89,6 +89,7 @@ function draw(){
   if(isBuilding){
     ctx.drawImage(towerImg,cursor.x-(cursor.x%32),cursor.y-(cursor.y%32),32,32);
   }
+  alert(enemy.path);
 }
 
 setInterval(draw , 1000/FPS);
