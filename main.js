@@ -35,7 +35,7 @@ function Enemy(){
   }
 }
 if((clock % 80) == 0){
-  var enemy = new Enemy();
+  var enemy = new Enemy;
   enemies.push( new Enemy );
 }
 
