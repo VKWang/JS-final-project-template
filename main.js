@@ -17,7 +17,7 @@ var enemyPath = [
   {x:224,y:320,speedx:0,speedy:64},
   {x:544,y:320,speedx:64,speedy:0},
   {x:544,y:96,speedx:0,speedy:-64},
-  {x:0,y:0,speedx:dontMove,speedy:dontMove}
+  {x:0,y:0,speedx=dontMove,speedy=dontMove}
 ];
 function Enemy(){
   this.x = 96;
