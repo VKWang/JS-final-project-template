@@ -19,7 +19,7 @@ var enemyPath = [
   {x:544,y:96,speedx:0,speedy:-64},
   {x:0,y:0,speedx:0,speedy:0}
 ];
-function Enemy() = {
+function Enemy(){
   this.x = 96;
   this.y = 448;
   this.path = 0;
@@ -33,7 +33,7 @@ function Enemy() = {
       this.y = this.y + enemyPath[this.path].speedy / FPS;
     }
   }
-}; 
+}
 var enemy = new Enemy();
 
 var btn = {
