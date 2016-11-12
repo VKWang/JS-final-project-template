@@ -19,11 +19,11 @@ var enemyPath = [
   {x:544,y:96,speedx:0,speedy:-64},
   {x:0,y:0,speedx:0,speedy:0}
 ];
-var enemy = {
-  x:96,
-  y:448,
-  path:0,
-  move: function (){
+function Enemy() = {
+  this.x = 96;
+  this.y = 448;
+  this.path = 0;
+  this.move = function (){
     if(isCollided(enemyPath[this.path].x,enemyPath[this.path].y,this.x,this.y,64/FPS,64/FPS)){
       this.x = enemyPath[this.path].x;
       this.y = enemyPath[this.path].y;
@@ -34,6 +34,7 @@ var enemy = {
     }
   }
 }; 
+var enemy = new Enemy();
 
 var btn = {
   x:578,
