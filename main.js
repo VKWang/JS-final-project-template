@@ -100,6 +100,7 @@ function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(btnImg,btn.x,btn.y,btn.width,btn.height);
   ctx.drawImage(slimeImg,enemy.x,enemy.y);
+  enemy.move();
   if((clock % 100) == 0){
     var newEnemy = new Enemy();
     enemies.push(newEnemy);
@@ -108,7 +109,6 @@ function draw(){
     enemies[i].move();
     ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
   }
-  enemy.move();
   ctx.drawImage(towerImg,tower.x,tower.y,tower.width,tower.height);
   if(isBuilding){
     ctx.drawImage(towerImg,cursor.x-(cursor.x%32),cursor.y-(cursor.y%32),32,32);
