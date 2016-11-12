@@ -96,15 +96,15 @@ var ctx = canvas.getContext("2d");
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(btnImg,btn.x,btn.y,btn.width,btn.height);
+  if((clock % 80) == 0){
+  var newEnemy = new Enemy();
+  enemies.push( newEnemy );
+  }
   ctx.drawImage(slimeImg,enemy.x,enemy.y);
   enemy.move();
   ctx.drawImage(towerImg,tower.x,tower.y,tower.width,tower.height);
   if(isBuilding){
     ctx.drawImage(towerImg,cursor.x-(cursor.x%32),cursor.y-(cursor.y%32),32,32);
-  }
-  if((clock % 80) == 0){
-  var newEnemy = new Enemy();
-  enemies.push( newEnemy );
   }
   clock++;
 }
