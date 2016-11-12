@@ -97,8 +97,6 @@ var ctx = canvas.getContext("2d");
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(btnImg,btn.x,btn.y,btn.width,btn.height);
-  //ctx.drawImage(slimeImg,enemy.x,enemy.y);
-  //enemy.move();
   if((clock % 100) == 0){
     var newEnemy = new Enemy();
     enemies.push(newEnemy);
