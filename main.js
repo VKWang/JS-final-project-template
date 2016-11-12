@@ -41,7 +41,7 @@ if((clock % 80) == 0){
 
 
 var FPS = 64;
-var clock = 0;
+var clock = -64;
 var btn = {
   x:578,
   y:418,
