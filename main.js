@@ -7,7 +7,7 @@ towerImg.src = "images/tower.png";
 var slimeImg = document.createElement("img");
 slimeImg.src = "images/slime.gif";
 
-var FPS = 64;
+
 var enemyPath = [
   {x:96,y:448,speedx:0,speedy:0},
   {x:96,y:64,speedx:0,speedy:-64},
@@ -34,8 +34,14 @@ function Enemy(){
     }
   }
 }
-var enemy = new Enemy();
+if((clock % 80) == 0){
+  var enemy = new Enemy();
+  enemies.push( new Enemy );
+}
 
+
+var FPS = 64;
+var clock = 0;
 var btn = {
   x:578,
   y:418,
@@ -47,6 +53,7 @@ var tower = {
   width:32,
   height:32
 };
+var enemies = [];
 
 var cursor = {x:0,y:0};
 $("#game-canvas").mousemove(function(event){
@@ -54,6 +61,7 @@ $("#game-canvas").mousemove(function(event){
     x:event.offsetX,y:event.offsetY
   }
 });
+
 
 $("#game-canvas").on("click" , function(){
   if(isCollided(cursor.x,cursor.y,640-64,480-64,64,64)){
@@ -70,6 +78,7 @@ $("#game-canvas").on("click" , function(){
     }
 });;
 
+
 function isCollided(pointX,pointY,targetX,targetY,targetWidth,targetLenth){
   if(   pointX >= targetX
      && pointX <= targetX+targetWidth
@@ -81,9 +90,12 @@ function isCollided(pointX,pointY,targetX,targetY,targetWidth,targetLenth){
   }
 }
 
+
 var canvas = document.getElementById("game-canvas");
 
+
 var ctx = canvas.getContext("2d");
+
 
 function draw(){
   ctx.drawImage(bgImg,0,0);
@@ -94,7 +106,9 @@ function draw(){
   if(isBuilding){
     ctx.drawImage(towerImg,cursor.x-(cursor.x%32),cursor.y-(cursor.y%32),32,32);
   }
+  clock++;
 }
+
 
 setInterval(draw , 1000/FPS);
 //for_help_nick66551
