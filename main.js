@@ -37,7 +37,7 @@ function Enemy(){
 
 
 var dontMove = 0;
-speed = 48;
+var speed = 48;
 var FPS = 64;
 var clock = 0;
 var btn = {
