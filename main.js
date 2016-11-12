@@ -19,8 +19,7 @@ var enemyPath = [
   {x:544,y:96,speedx:0,speedy:-64},
   {x:0,y:0,speedx:0,speedy:0}
 ];
-function Enemy(this.alive){
-  this.alive = true;
+function Enemy(){
   this.x = 96;
   this.y = 448;
   this.path = 0;
