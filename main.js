@@ -98,7 +98,7 @@ function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(btnImg,btn.x,btn.y,btn.width,btn.height);
   ctx.drawImage(slimeImg,enemy.x,enemy.y);
-  if((clock % 10) == 0){
+  if((clock % 1) == 0){
     var newEnemy = new Enemy();
     enemies.push(newEnemy);
   }
