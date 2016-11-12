@@ -49,6 +49,7 @@ var tower = {
   width:32,
   height:32
 };
+var enemy = new Enemy();
 var enemies = [];
 
 var cursor = {x:0,y:0};
