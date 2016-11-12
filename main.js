@@ -9,8 +9,8 @@ slimeImg.src = "images/slime.gif";
 
 
 var enemyPath = [
-  {x:96,y:448,speedx:dontMove,speedy:dontMove},
-  {x:96,y:64,speedx:dontMove,speedy:-speed},
+  {x:96,y:448,speedx:0,speedy:0},
+  {x:96,y:64,speedx:0,speedy:-48},
   {x:384,y:64,speedx:speed,speedy:dontMove},
   {x:384,y:192,speedx:dontMove,speedy:speed},
   {x:224,y:192,speedx:-speed,speedy:dontMove},
