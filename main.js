@@ -10,13 +10,13 @@ slimeImg.src = "images/slime.gif";
 
 var enemyPath = [
   {x:96,y:448,speedx:0,speedy:0},
-  {x:96,y:64,speedx:0,speedy:-64},
-  {x:384,y:64,speedx:64,speedy:0},
-  {x:384,y:192,speedx:0,speedy:64},
-  {x:224,y:192,speedx:-64,speedy:0},
-  {x:224,y:320,speedx:0,speedy:64},
-  {x:544,y:320,speedx:64,speedy:0},
-  {x:544,y:96,speedx:0,speedy:-64},
+  {x:96,y:64,speedx:0,speedy:-32},
+  {x:384,y:64,speedx:32,speedy:0},
+  {x:384,y:192,speedx:0,speedy:32},
+  {x:224,y:192,speedx:-32,speedy:0},
+  {x:224,y:320,speedx:0,speedy:32},
+  {x:544,y:320,speedx:32,speedy:0},
+  {x:544,y:96,speedx:0,speedy:-32},
   {x:0,y:0,speedx:0,speedy:0}
 ];
 function Enemy(){
@@ -98,7 +98,7 @@ function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(btnImg,btn.x,btn.y,btn.width,btn.height);
   ctx.drawImage(slimeImg,enemy.x,enemy.y);
-  if((clock % 1) == 0){
+  if((clock % 100) == 0){
     var newEnemy = new Enemy();
     enemies.push(newEnemy);
   }
