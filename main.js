@@ -99,7 +99,11 @@ function draw(){
   ctx.drawImage(btnImg,btn.x,btn.y,btn.width,btn.height);
   if((clock % 80) == 0){
   var newEnemy = new Enemy();
-  enemies.push( newEnemy );
+  enemies.push(newEnemy);
+  }
+  for(var i=0;i<enemies.length;i++){
+    enemies[i].move();
+    ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
   }
   ctx.drawImage(slimeImg,enemy.x,enemy.y);
   enemy.move();
