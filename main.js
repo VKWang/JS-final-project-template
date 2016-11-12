@@ -28,6 +28,9 @@ function Enemy(){
       this.x = enemyPath[this.path].x;
       this.y = enemyPath[this.path].y;
       this.path++;
+      if(this.path == enemyPath.length){
+        health = health - 10;
+      }
   }else if(this.path <= enemyPath.length){
       this.x = this.x + enemyPath[this.path].speedx / FPS;
       this.y = this.y + enemyPath[this.path].speedy / FPS;
