@@ -9,22 +9,22 @@ slimeImg.src = "images/slime.gif";
 
 
 var enemyPath = [
-  {x:96,y:448,speedx:0,speedy:0},
-  {x:96,y:64,speedx:0,speedy:-90},
-  {x:384,y:64,speedx:90,speedy:0},
-  {x:384,y:192,speedx:0,speedy:90},
-  {x:224,y:192,speedx:-90,speedy:0},
-  {x:224,y:320,speedx:0,speedy:90},
-  {x:544,y:320,speedx:90,speedy:0},
-  {x:544,y:96,speedx:0,speedy:-90},
-  {x:0,y:0,speedx:0,speedy:0}
+  {x:96,y:448,speedx:dontMove,speedy:dontMove},
+  {x:96,y:64,speedx:dontMove,speedy:-90},
+  {x:384,y:64,speedx:90,speedy:dontMove},
+  {x:384,y:192,speedx:dontMove,speedy:90},
+  {x:224,y:192,speedx:-90,speedy:dontMove},
+  {x:224,y:320,speedx:dontMove,speedy:90},
+  {x:544,y:320,speedx:90,speedy:dontMove},
+  {x:544,y:96,speedx:dontMove,speedy:-90},
+  {x:0,y:0,speedx:dontMove,speedy:dontMove}
 ];
 function Enemy(){
   this.x = 96;
   this.y = 448;
   this.path = 0;
   this.move = function (){
-    if(isCollided(enemyPath[this.path].x,enemyPath[this.path].y,this.x,this.y,64/FPS,64/FPS)){
+    if(isCollided(enemyPath[this.path].x,enemyPath[this.path].y,this.x,this.y,90/FPS,90/FPS)){
       this.x = enemyPath[this.path].x;
       this.y = enemyPath[this.path].y;
       this.path++;
@@ -36,6 +36,8 @@ function Enemy(){
 }
 
 
+dontMove = 0;
+speed = 48;
 var FPS = 64;
 var clock = 0;
 var btn = {
