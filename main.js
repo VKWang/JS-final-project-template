@@ -34,10 +34,6 @@ function Enemy(){
     }
   }
 }
-if((clock % 80) == 0){
-  var newEnemy = new Enemy();
-  enemies.push( newEnemy );
-}
 
 
 var FPS = 64;
@@ -105,6 +101,10 @@ function draw(){
   ctx.drawImage(towerImg,tower.x,tower.y,tower.width,tower.height);
   if(isBuilding){
     ctx.drawImage(towerImg,cursor.x-(cursor.x%32),cursor.y-(cursor.y%32),32,32);
+  }
+  if((clock % 80) == 0){
+  var newEnemy = new Enemy();
+  enemies.push( newEnemy );
   }
   clock++;
 }
