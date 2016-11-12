@@ -35,13 +35,13 @@ function Enemy(){
   }
 }
 if((clock % 80) == 0){
-  var enemy = new Enemy;
-  enemies.push( new Enemy );
+  var newEnemy = new Enemy();
+  enemies.push( newEnemy );
 }
 
 
 var FPS = 64;
-var clock = -64;
+var clock = 0;
 var btn = {
   x:578,
   y:418,
