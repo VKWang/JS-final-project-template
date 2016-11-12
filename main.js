@@ -17,14 +17,14 @@ var enemyPath = [
   {x:224,y:320,speedx:0,speedy:64},
   {x:544,y:320,speedx:64,speedy:0},
   {x:544,y:96,speedx:0,speedy:-64},
-  {x:0,y:0,speedx=dontMove,speedy=dontMove}
+  {x:0,y:0,speedx:0,speedy:0}
 ];
 function Enemy(){
   this.x = 96;
   this.y = 448;
   this.path = 0;
   this.move = function (){
-    if(isCollided(enemyPath[this.path].x,enemyPath[this.path].y,this.x,this.y,speed/FPS,speed/FPS)){
+    if(isCollided(enemyPath[this.path].x,enemyPath[this.path].y,this.x,this.y,64/FPS,64/FPS)){
       this.x = enemyPath[this.path].x;
       this.y = enemyPath[this.path].y;
       this.path++;
@@ -36,8 +36,6 @@ function Enemy(){
 }
 
 
-var dontMove = 0;
-var speed = 64;
 var FPS = 64;
 var clock = 0;
 var btn = {
