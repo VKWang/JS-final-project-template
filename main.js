@@ -11,12 +11,12 @@ slimeImg.src = "images/slime.gif";
 var enemyPath = [
   {x:96,y:448,speedx:0,speedy:0},
   {x:96,y:64,speedx:0,speedy:-48},
-  {x:384,y:64,speedx:speed,speedy:dontMove},
-  {x:384,y:192,speedx:dontMove,speedy:speed},
-  {x:224,y:192,speedx:-speed,speedy:dontMove},
-  {x:224,y:320,speedx:dontMove,speedy:speed},
-  {x:544,y:320,speedx:speed,speedy:dontMove},
-  {x:544,y:96,speedx:dontMove,speedy:-speed},
+  {x:384,y:64,speedx:48,speedy:0},
+  {x:384,y:192,speedx:0,speedy:48},
+  {x:224,y:192,speedx:-48,speedy:0},
+  {x:224,y:320,speedx:0,speedy:48},
+  {x:544,y:320,speedx:48,speedy:0},
+  {x:544,y:96,speedx:0,speedy:-48},
   {x:0,y:0,speedx:dontMove,speedy:dontMove}
 ];
 function Enemy(){
