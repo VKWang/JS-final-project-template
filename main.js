@@ -36,6 +36,8 @@ function Enemy(){
 }
 
 
+var health = 200;
+var hpColor = "white";
 var FPS = 64;
 var clock = 0;
 var btn = {
@@ -51,6 +53,7 @@ var tower = {
 };
 var enemy = new Enemy();
 var enemies = [];
+
 
 var cursor = {x:0,y:0};
 $("#game-canvas").mousemove(function(event){
@@ -97,9 +100,9 @@ var ctx = canvas.getContext("2d");
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(btnImg, btn.x, btn.y, btn.width, btn.height);
-  ctx.fillText("HP:"+200,468,57);
+  ctx.fillText("HP:"+health,468,57);
   ctx.font = "25px Arial";
-  ctx.fillStyle = "white";
+  ctx.fillStyle = hpColor;
   if((clock % 100) == 0){
     var newEnemy = new Enemy();
     enemies.push(newEnemy);
