@@ -8,17 +8,6 @@ var slimeImg = document.createElement("img");
 slimeImg.src = "images/slime.gif";
 
 
-var enemyPath = [
-  {x:96,y:448,speedx:0,speedy:0},
-  {x:96,y:64,speedx:0,speedy:-64},
-  {x:384,y:64,speedx:64,speedy:0},
-  {x:384,y:192,speedx:0,speedy:64},
-  {x:224,y:192,speedx:-64,speedy:0},
-  {x:224,y:320,speedx:0,speedy:64},
-  {x:544,y:320,speedx:64,speedy:0},
-  {x:544,y:96,speedx:0,speedy:-64},
-  {x:0,y:0,speedx:0,speedy:0}
-];
 function Enemy(){
   this.x = 96;
   this.y = 448;
@@ -67,8 +56,33 @@ var btn = {
 var isBuilding = false;
 var tower = {
   width:32,
-  height:32
+  height: 32,
+  range: 96,
+  aimingEnemyId: null,
+  searchEnemy: function(){
+    for(var i=0;i<enemies.length;i++){
+      var distance = Math.sprt(
+        Math.pow(this.x-enemies[i].x,2)+Math.pow(this.y-enemyies[i].y,2)
+      );
+      if(distance <= this.range){
+        this.aimingEnemyId = i;
+        return;
+      }
+    }
+    this.aimingEnemyId = null;
+  }
 };
+var enemyPath = [
+  {x:96,y:448,speedx:0,speedy:0},
+  {x:96,y:64,speedx:0,speedy:-64},
+  {x:384,y:64,speedx:64,speedy:0},
+  {x:384,y:192,speedx:0,speedy:64},
+  {x:224,y:192,speedx:-64,speedy:0},
+  {x:224,y:320,speedx:0,speedy:64},
+  {x:544,y:320,speedx:64,speedy:0},
+  {x:544,y:96,speedx:0,speedy:-64},
+  {x:0,y:0,speedx:0,speedy:0}
+];
 var enemy = new Enemy();
 var enemies = [];
 
