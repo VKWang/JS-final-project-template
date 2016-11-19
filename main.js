@@ -121,7 +121,7 @@ function draw(){
   ctx.fillText("HP:"+health,468,57);
   ctx.font = "25px Arial";
   lifeOfTree();
-  if((clock % 100) == 0){
+  if((clock % 100) == 0 && health > 0){
     var newEnemy = new Enemy();
     enemies.push(newEnemy);
   }
