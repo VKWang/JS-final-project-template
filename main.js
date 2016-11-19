@@ -39,6 +39,7 @@ function Enemy(){
     }
   }
 }
+function
 
 
 var health = 200;
@@ -128,5 +129,5 @@ function draw(){
 }
 
 
-setInterval(draw , 1000/FPS);
+if(health > 0){setInterval(draw , 1000/FPS)};
 //for_help_nick66551
