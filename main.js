@@ -29,7 +29,7 @@ function Enemy(){
       this.x = enemyPath[this.path].x;
       this.y = enemyPath[this.path].y;
       this.path++;
-      if(this.path =enemy.length){
+      if(this.path =enemyPath.length){
         this.hp = 0;
         health = health-10;
       }
