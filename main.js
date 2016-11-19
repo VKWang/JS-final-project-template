@@ -97,7 +97,7 @@ var ctx = canvas.getContext("2d");
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(btnImg, btn.x, btn.y, btn.width, btn.height);
-  ctx.fillText("HP:"+200,452,57);
+  ctx.fillText("HP:"+200,468,57);
   ctx.font = "25px Arial";
   ctx.fillStyle = "white";
   if((clock % 100) == 0){
