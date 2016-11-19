@@ -6,6 +6,8 @@ var towerImg = document.createElement("img");
 towerImg.src = "images/tower.png";
 var slimeImg = document.createElement("img");
 slimeImg.src = "images/slime.gif";
+var crosshairImg = document.creatElement("img");
+crosshairImg.src = "images/crosshair.png";
 
 
 function Enemy(){
@@ -146,6 +148,10 @@ function draw(){
     enemies[i].move();
     ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
                          }
+  }
+  tower.searchEnemy();
+  if(aimingEnemyId != null){
+    ctx.drawImage(crosshairImg,enemies[i].x,enemies[i].y,32,32);
   }
   ctx.drawImage(towerImg,tower.x,tower.y,tower.width,tower.height);
   if(isBuilding){
