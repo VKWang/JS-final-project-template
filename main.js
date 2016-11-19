@@ -35,7 +35,7 @@ function Enemy(){
          health = health-10;
        }
       }
-  }else if(this.path <= enemyPath.length){
+  }else if(this.path <= enemyPath.length && health > 0){
       this.x = this.x + enemyPath[this.path].speedx / FPS;
       this.y = this.y + enemyPath[this.path].speedy / FPS;
     }
@@ -128,7 +128,7 @@ function draw(){
   for(var i=0;i<enemies.length;i++){
     if(enemies[i].hp <= 0){
       enemies.splice[i,1];
-                         }else if(health > 0){
+                         }else{
     enemies[i].move();
     ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
                          }
