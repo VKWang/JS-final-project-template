@@ -6,7 +6,7 @@ var towerImg = document.createElement("img");
 towerImg.src = "images/tower.png";
 var slimeImg = document.createElement("img");
 slimeImg.src = "images/slime.gif";
-var crosshairImg = document.creatElement("img");
+var crosshairImg = document.createElement("img");
 crosshairImg.src = "images/crosshair.png";
 
 
