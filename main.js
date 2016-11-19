@@ -49,7 +49,6 @@ var tower = {
   width:32,
   height:32
 };
-var health = 200;
 var enemy = new Enemy();
 var enemies = [];
 
@@ -98,7 +97,7 @@ var ctx = canvas.getContext("2d");
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(btnImg, btn.x, btn.y, btn.width, btn.height);
-  ctx.fillText(health+"/200HP", 10, 32);
+  ctx.fillText("HP:"+200, 600, 32);
   ctx.font = "22px Arial";
   ctx.fillStyle = "white";
   if((clock % 100) == 0){
