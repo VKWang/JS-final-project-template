@@ -97,8 +97,8 @@ var ctx = canvas.getContext("2d");
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(btnImg, btn.x, btn.y, btn.width, btn.height);
-  ctx.fillText("HP:"+200,384,64);
-  ctx.font = "32px Arial";
+  ctx.fillText("HP:"+200,436,48);
+  ctx.font = "28px Arial";
   ctx.fillStyle = "white";
   if((clock % 100) == 0){
     var newEnemy = new Enemy();
