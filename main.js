@@ -31,7 +31,9 @@ function Enemy(){
       this.path++;
       if(this.path === enemyPath.length-1){
         this.hp = 0;
-        health = health-10;
+       if(health < 0){
+         health = health-10;
+       }
       }
   }else if(this.path <= enemyPath.length){
       this.x = this.x + enemyPath[this.path].speedx / FPS;
@@ -39,7 +41,17 @@ function Enemy(){
     }
   }
 }
-function
+function lifeOfTree(){
+  ctx.fillStyle = hpColor;
+  if(health > 100){
+    hpColor = "white";
+  }else if(health > 30){
+    hpColor = "orange";
+  }else{
+    hpColor = "red";
+  }
+}
+
 
 
 var health = 200;
@@ -108,7 +120,7 @@ function draw(){
   ctx.drawImage(btnImg, btn.x, btn.y, btn.width, btn.height);
   ctx.fillText("HP:"+health,468,57);
   ctx.font = "25px Arial";
-  ctx.fillStyle = hpColor;
+  lifeOfTree();
   if((clock % 100) == 0){
     var newEnemy = new Enemy();
     enemies.push(newEnemy);
@@ -129,5 +141,5 @@ function draw(){
 }
 
 
-if(health > 0){setInterval(draw , 1000/FPS)};
+setInterval(draw , 1000/FPS);
 //for_help_nick66551
