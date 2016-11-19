@@ -151,7 +151,7 @@ function draw(){
   }
   tower.searchEnemy();
   if(tower.aimingEnemyId != null){
-    ctx.drawImage(crosshairImg,enemies[i].x,enemies[i].y,32,32);
+    ctx.drawImage(crosshairImg,enemies[aimingEnemyId].x,enemies[aimingEnemy].y,32,32);
   }
   ctx.drawImage(towerImg,tower.x,tower.y,tower.width,tower.height);
   if(isBuilding){
