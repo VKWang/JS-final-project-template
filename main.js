@@ -31,7 +31,7 @@ function Enemy(){
       this.path++;
       if(this.path === enemyPath.length-1){
         this.hp = 0;
-       if(health < 0){
+       if(health > 0){
          health = health-10;
        }
       }
