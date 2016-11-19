@@ -23,11 +23,16 @@ function Enemy(){
   this.x = 96;
   this.y = 448;
   this.path = 0;
+  this.hp = 10;
   this.move = function (){
     if(isCollided(enemyPath[this.path].x,enemyPath[this.path].y,this.x,this.y,64/FPS,64/FPS)){
       this.x = enemyPath[this.path].x;
       this.y = enemyPath[this.path].y;
       this.path++;
+      if(this.path =enemy.length){
+        this.hp = 0;
+        health = health-10;
+      }
   }else if(this.path <= enemyPath.length){
       this.x = this.x + enemyPath[this.path].speedx / FPS;
       this.y = this.y + enemyPath[this.path].speedy / FPS;
@@ -108,8 +113,12 @@ function draw(){
     enemies.push(newEnemy);
   }
   for(var i=0;i<enemies.length;i++){
+    if(enemy[i].hp <= 10){
+      enemies.splice[i,1];
+                         }else{
     enemies[i].move();
     ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
+                         }
   }
   ctx.drawImage(towerImg,tower.x,tower.y,tower.width,tower.height);
   if(isBuilding){
