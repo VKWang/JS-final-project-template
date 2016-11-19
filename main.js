@@ -24,7 +24,7 @@ function Enemy(){
   this.y = 448;
   this.path = 0;
   this.hp = 10;
-  this.move = function (health > 0){
+  this.move = function (){
     if(isCollided(enemyPath[this.path].x,enemyPath[this.path].y,this.x,this.y,64/FPS,64/FPS)){
       this.x = enemyPath[this.path].x;
       this.y = enemyPath[this.path].y;
@@ -128,7 +128,7 @@ function draw(){
   for(var i=0;i<enemies.length;i++){
     if(enemies[i].hp <= 0){
       enemies.splice[i,1];
-                         }else{
+                         }else if(health > 0){
     enemies[i].move();
     ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
                          }
