@@ -79,17 +79,14 @@ var tower = {
     }
     this.aimingEnemyId = null;
   },
-  shoot: function(id){
+  shoot: function(){
     ctx.beginPath();
     ctx.moveTo(tower.x,tower.y);
-    ctx.lineTo(enemies[id].x,enemies[id].y);
+    ctx.lineTo(enemies[this.aimingEnemyId].x,enemies[this.aimingEnemyid].y);
     ctx.strokeStyle = "red";
     ctx.lineWidth = 3;
     ctx.stroke();
-    enemies[id].hp -= this.damage;
-    if(enemies[id].hp <= 0){
-      enemies.splice[id,1]
-    }
+    enemies[this.aimimgEnemyId].hp -= this.damage;
   }
 };
 var enemyPath = [
@@ -150,7 +147,6 @@ var ctx = canvas.getContext("2d");
 
 
 function draw(){
-  var id = tower.aimingEnemyId;
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(btnImg, btn.x, btn.y, btn.width, btn.height);
   ctx.fillText("HP:"+health,468,57);
@@ -169,12 +165,10 @@ function draw(){
                          }
   }
   tower.searchEnemy();
-  if(id !== null){
-     tower.shoot(id);
-  }
   if(tower.aimingEnemyId != null){
     var id = tower.aimingEnemyId;
     ctx.drawImage(crosshairImg,enemies[id].x,enemies[id].y,32,32);
+    tower.shoot();
   }
   ctx.drawImage(towerImg,tower.x,tower.y,tower.width,tower.height);
   if(isBuilding){
