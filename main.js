@@ -72,21 +72,21 @@ var tower = {
       if(distance <= this.range){
         this.aimingEnemyId = i;
         if(this.countDownTime <= 0){
-          this.shoot(i);
+          this.shoot(aimingEnemyId);
           this.countDownTime = this.fireRate;}
         return;
       }
     }
     this.aimingEnemyId = null;
   },
-  shoot: function(){
-    ctx.beginPath();
+  shoot: function(id){
+    ctx.beginPath(id);
     ctx.moveTo(this.x,this.y);
-    ctx.lineTo(enemies[this.i].x,enemies[this.i].y);
+    ctx.lineTo(enemies[id].x,enemies[id].y);
     ctx.strokeStyle = "red";
     ctx.lineWidth = 3;
     ctx.stroke();
-    enemies[this.i].hp -= this.damage;
+    enemies[id].hp -= this.damage;
   }
 };
 var enemyPath = [
