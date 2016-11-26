@@ -61,7 +61,7 @@ var tower = {
   range: 96,
   fireRate: 8,
   countDownTime: 0,
-  damage: 10,
+  damage: 1,
   aimingEnemyId: null,
   searchEnemy: function(){
     for(var i=0;i<enemies.length;i++){
