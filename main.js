@@ -149,7 +149,7 @@ function draw(){
   lifeOfTree();
   ctx.beginPath();
   ctx.moveTo(tower.x,tower.y);
-  ctx.lineTo(enemies[id].x,enemies[id].y);
+  ctx.lineTo(enemies[tower.aimingEnemyId].x,enemies[tower.aimingEnemyId].y);
   ctx.strokeStyle = "red";
   ctx.lineWidth = 3;
   ctx.stroke();
