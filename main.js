@@ -72,7 +72,7 @@ var tower = {
       if(distance <= this.range){
         this.aimingEnemyId = i;
         if(this.countDownTime <= 0){
-          this.shoot();
+          this.shoot(i);
           this.countDownTime = this.fireRate;}
         return;
       }
@@ -82,11 +82,11 @@ var tower = {
   shoot: function(){
     ctx.beginPath();
     ctx.moveTo(this.x,this.y);
-    ctx.lineTo(enemies[this.aimingEnemyId].x,enemies[this.aimingEnemyid].y);
+    ctx.lineTo(enemies[this.i].x,enemies[this.i].y);
     ctx.strokeStyle = "red";
     ctx.lineWidth = 3;
     ctx.stroke();
-    enemies[this.aimimgEnemyId].hp -= this.damage;
+    enemies[this.i].hp -= this.damage;
   }
 };
 var enemyPath = [
