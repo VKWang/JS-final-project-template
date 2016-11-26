@@ -84,9 +84,12 @@ var tower = {
     ctx.moveTo(tower.x,tower.y);
     ctx.lineTo(enemies[id].x,enemies[id].y);
     ctx.strokeStyle = "red";
-    ctx.lineWidth = 10;
+    ctx.lineWidth = 3;
     ctx.stroke();
     enemies[id].hp -= this.damage;
+    if(enemies[id].hp <= 0){
+      enemies.splice[id,1]
+    }
   }
 };
 var enemyPath = [
