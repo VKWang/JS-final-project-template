@@ -83,7 +83,7 @@ var tower = {
   shoot: function(id){
     ctx.beginPath(id);
     ctx.moveTo(this.x,this.y);
-    ctx.lineTo(enemies[id].x,enemies[id].y);
+    ctx.lineTo(enemies[id].x+16,enemies[id].y+16);
     ctx.strokeStyle = "red";
     ctx.lineWidth = 5;
     ctx.stroke();
