@@ -44,7 +44,6 @@ function lifeOfTree(){
 }
 
 
-
 var health = 200;
 var hpColor = "white";
 var FPS = 64;
@@ -60,18 +59,28 @@ var tower = {
   width:32,
   height: 32,
   range: 96,
+  fireRate: 32,
+  countDownTime: 32,
+  damage: 5,
   aimingEnemyId: null,
   searchEnemy: function(){
     for(var i=0;i<enemies.length;i++){
+      this.countDownTime -= 1/FPS;
       var distance = Math.sqrt(
         Math.pow(this.x-enemies[i].x,2)+Math.pow(this.y-enemies[i].y,2)
       );
       if(distance <= this.range){
         this.aimingEnemyId = i;
+        if(this.countDownTime <= 0){
+          this.shoot();
+          this.countDownTime = this.fireRate;}
         return;
       }
     }
     this.aimingEnemyId = null;
+  },
+  shoot: function(){
+    
   }
 };
 var enemyPath = [
@@ -137,6 +146,12 @@ function draw(){
   ctx.fillText("HP:"+health,468,57);
   ctx.font = "25px Arial";
   lifeOfTree();
+  ctx.deginPath();
+  ctx.moveTo(tower.x,tower.y);
+  ctx.lineTo(enemies[id].x,enemies[id].y);
+  ctx.strokeStyle = "red";
+  ctx.lineWidth = 3;
+  ctx.stroke();
   if((clock % 100) == 0 && health > 0){
     var newEnemy = new Enemy();
     enemies.push(newEnemy);
