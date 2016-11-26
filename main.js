@@ -79,8 +79,15 @@ var tower = {
     }
     this.aimingEnemyId = null;
   },
-  shoot: function(){
-    
+  shoot: function(id){
+    var id = this.aimingEnemyId;
+    ctx.beginPath();
+    ctx.moveTo(tower.x,tower.y);
+    ctx.lineTo(enemies[tower.aimingEnemyId].x,enemies[tower.aimingEnemyId].y);
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 3;
+    ctx.stroke();
+    enemies[id].hp -= this.damage;
   }
 };
 var enemyPath = [
@@ -96,7 +103,6 @@ var enemyPath = [
 ];
 var enemy = new Enemy();
 var enemies = [];
-var id = tower.aimingEnemyId;
 
 
 var cursor = {x:0,y:0};
@@ -147,12 +153,6 @@ function draw(){
   ctx.fillText("HP:"+health,468,57);
   ctx.font = "25px Arial";
   lifeOfTree();
-  ctx.beginPath();
-  ctx.moveTo(tower.x,tower.y);
-  ctx.lineTo(enemies[tower.aimingEnemyId].x,enemies[tower.aimingEnemyId].y);
-  ctx.strokeStyle = "red";
-  ctx.lineWidth = 3;
-  ctx.stroke();
   if((clock % 100) == 0 && health > 0){
     var newEnemy = new Enemy();
     enemies.push(newEnemy);
