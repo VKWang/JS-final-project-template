@@ -84,7 +84,7 @@ var tower = {
     ctx.moveTo(tower.x,tower.y);
     ctx.lineTo(enemies[id].x,enemies[id].y);
     ctx.strokeStyle = "red";
-    ctx.lineWidth = 3;
+    ctx.lineWidth = 10;
     ctx.stroke();
     enemies[id].hp -= this.damage;
   }
@@ -167,7 +167,7 @@ function draw(){
   }
   tower.searchEnemy();
   if(id !== null){
-     tower.shoot(tower.aimingEnemyId);
+     tower.shoot(id);
   }
   if(tower.aimingEnemyId != null){
     var id = tower.aimingEnemyId;
