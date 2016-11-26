@@ -168,7 +168,6 @@ function draw(){
   if(tower.aimingEnemyId != null){
     var id = tower.aimingEnemyId;
     ctx.drawImage(crosshairImg,enemies[id].x,enemies[id].y,32,32);
-    tower.shoot();
   }
   ctx.drawImage(towerImg,tower.x,tower.y,tower.width,tower.height);
   if(isBuilding){
