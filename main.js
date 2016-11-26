@@ -145,8 +145,9 @@ var canvas = document.getElementById("game-canvas");
 
 var ctx = canvas.getContext("2d");
 
-var id = tower.aimingEnemyId;
+
 function draw(){
+  var id = tower.aimingEnemyId;
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(btnImg, btn.x, btn.y, btn.width, btn.height);
   ctx.fillText("HP:"+health,468,57);
@@ -165,7 +166,7 @@ function draw(){
                          }
   }
   tower.searchEnemy();
-  if(id != null){
+  if(id !== null){
      tower.shoot(tower.aimingEnemyId);
   }
   if(tower.aimingEnemyId != null){
