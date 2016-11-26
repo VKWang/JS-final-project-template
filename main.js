@@ -80,10 +80,9 @@ var tower = {
     this.aimingEnemyId = null;
   },
   shoot: function(id){
-    var id = this.aimingEnemyId;
     ctx.beginPath();
     ctx.moveTo(tower.x,tower.y);
-    ctx.lineTo(enemies[tower.aimingEnemyId].x,enemies[tower.aimingEnemyId].y);
+    ctx.lineTo(enemies[id].x,enemies[id].y);
     ctx.strokeStyle = "red";
     ctx.lineWidth = 3;
     ctx.stroke();
@@ -166,7 +165,9 @@ function draw(){
                          }
   }
   tower.searchEnemy();
-  tower.shoot();
+  if(id != null){
+     tower.shoot(tower.aimingEnemyId);
+  }
   if(tower.aimingEnemyId != null){
     var id = tower.aimingEnemyId;
     ctx.drawImage(crosshairImg,enemies[id].x,enemies[id].y,32,32);
