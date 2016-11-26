@@ -146,7 +146,7 @@ var canvas = document.getElementById("game-canvas");
 
 var ctx = canvas.getContext("2d");
 
-var id = aimingEnemyId;
+var id = tower.aimingEnemyId;
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(btnImg, btn.x, btn.y, btn.width, btn.height);
