@@ -146,7 +146,7 @@ function draw(){
   ctx.fillText("HP:"+health,468,57);
   ctx.font = "25px Arial";
   lifeOfTree();
-  ctx.deginPath();
+  ctx.beginPath();
   ctx.moveTo(tower.x,tower.y);
   ctx.lineTo(enemies[id].x,enemies[id].y);
   ctx.strokeStyle = "red";
