@@ -59,8 +59,8 @@ var tower = {
   width:32,
   height: 32,
   range: 96,
-  fireRate: 32,
-  countDownTime: 32,
+  fireRate: 8,
+  countDownTime: 8,
   damage: 5,
   aimingEnemyId: null,
   searchEnemy: function(){
