@@ -71,7 +71,7 @@ var tower = {
       );
       if(distance <= this.range){
         this.aimingEnemyId = i;
-
+        this.countDownTime -= 1;
         if(this.countDownTime <= 0 && this.aimingEnemyId != null){
           this.shoot(this.aimingEnemyId);
           this.countDownTime = this.fireRate;
