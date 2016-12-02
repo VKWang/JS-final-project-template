@@ -158,18 +158,18 @@ function draw(){
     var newEnemy = new Enemy();
     enemies.push(newEnemy);
   }
-  for(var i=0;i<enemies.length;i++){
+  tower.searchEnemy();
+  if(tower.aimingEnemyId != null){
+    var id = tower.aimingEnemyId;
+    ctx.drawImage(crosshairImg,enemies[id].x,enemies[id].y,32,32);
+  }
+   for(var i=0;i<enemies.length;i++){
     if(enemies[i].hp <= 0){
       enemies.splice[i,1];
                          }else{
     enemies[i].move();
     ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
                          }
-  }
-  tower.searchEnemy();
-  if(tower.aimingEnemyId != null){
-    var id = tower.aimingEnemyId;
-    ctx.drawImage(crosshairImg,enemies[id].x,enemies[id].y,32,32);
   }
   ctx.drawImage(towerImg,tower.x,tower.y,tower.width,tower.height);
   if(isBuilding){
