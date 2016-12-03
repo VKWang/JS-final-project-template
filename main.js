@@ -76,9 +76,8 @@ var tower = {
           this.countDownTime = this.fireRate;
         }
         return;
-      }
-    }
-    this.aimingEnemyId = null;
+      }this.aimingEnemyId = null;
+    };
   },
   shoot: function(id){
     ctx.beginPath(id);
