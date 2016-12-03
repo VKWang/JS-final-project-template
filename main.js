@@ -131,9 +131,10 @@ $("#game-canvas").on("click" , function(){
         towers.push(newTower);
         towers[i].x = cursor.x-(cursor.x%32);
         towers[i].y = cursor.y-(cursor.y%32);
+        isBuilding = false;
+        return;
       }
     }
-    isBuilding = false;
   }
 });;
 
