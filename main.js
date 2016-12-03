@@ -107,6 +107,8 @@ var enemy = new Enemy();
 var enemies = [];
 var tower = new Tower();
 var towers = [];
+var newTower = new Tower();
+
 
 var cursor = {x:0,y:0};
 $("#game-canvas").mousemove(function(event){
@@ -119,17 +121,20 @@ $("#game-canvas").mousemove(function(event){
 $("#game-canvas").on("click" , function(){
   if(isCollided(cursor.x,cursor.y,640-64,480-64,64,64)){
     if(isBuilding){
-      towers.push(newTower);
       isBuilding = false;
+    }else{
+      isBuilding = true;
     }
-     else{
-     isBuilding = true;
-     }
   }else if(isBuilding){
-      tower.x=cursor.x-(cursor.x%32);
-      tower.y=cursor.y-(cursor.y%32);
-      isBuilding = false;
+    for(var i=0;i<=towers.length;i++){
+      if(i==towers.length){
+        towers.push(newTower);
+        towers[i].x = cursor.x-(cursor.x%32);
+        towers[i].y = cursor.y-(cursor.y%32);
+      }
     }
+    isBuilding = false;
+  }
 });;
 
 
@@ -161,9 +166,6 @@ function draw(){
     var newEnemy = new Enemy();
     enemies.push(newEnemy);
   }
-  for(var i=0;i<=towers.length;i++){
-    towers[i].searchEnemy();
-  }
   for(var i=0;i<enemies.length;i++){
     if(tower.aimingEnemyId != null){
       var id = tower.aimingEnemyId;
@@ -172,15 +174,18 @@ function draw(){
       tower.aimingEnemyId = null;
     }
   }
-   for(var i=0;i<enemies.length;i++){
+  for(var i=0;i<enemies.length;i++){
     if(enemies[i].hp <= 0){
       enemies.splice[i,1];
-                         }else{
-    enemies[i].move();
-    ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
-                         }
+    }else{
+      enemies[i].move();
+      ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
+    }
   }
-  ctx.drawImage(towerImg,tower.x,tower.y,tower.width,tower.height);
+  for(var i=0;i<=towers.length;i++){
+    towers[i].searchEnemy();
+    ctx.drawImage(towerImg,tower.x,tower.y,tower.width,tower.height)
+  }
   if(isBuilding){
     ctx.drawImage(towerImg,cursor.x-(cursor.x%32),cursor.y-(cursor.y%32),32,32);
   }
