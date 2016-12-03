@@ -58,8 +58,8 @@ var isBuilding = false;
 function Tower(){
   this.width = 32;
   this.height = 32;
-  this.x = x;
-  this.y = y;
+  this.x = 0;
+  this.y = 0;
   this.range = 96;
   this.fireRate = 16;
   this.countDownTime = 0;
