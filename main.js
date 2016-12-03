@@ -42,7 +42,7 @@ function lifeOfTree(){
     hpColor = "red";
   }
 }
-function Tower(){
+function Tower(x,y){
   this.width = 32;
   this.height = 32;
   this.x = x;
