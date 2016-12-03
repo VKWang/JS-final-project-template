@@ -76,7 +76,8 @@ var tower = {
           this.countDownTime = this.fireRate;
         }
         return;
-      }this.aimingEnemyId = null;
+      }
+      this.aimingEnemyId = null;
     };
   },
   shoot: function(id){
@@ -87,7 +88,7 @@ var tower = {
     ctx.lineWidth = 5;
     ctx.stroke();
     enemies[id].hp -= this.damage;
-  }
+  },
 };
 var enemyPath = [
   {x:96,y:448,speedx:0,speedy:0},
