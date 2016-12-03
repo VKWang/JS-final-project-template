@@ -55,15 +55,17 @@ var btn = {
   height:64
 };
 var isBuilding = false;
-var tower = {
-  width:32,
-  height: 32,
-  range: 96,
-  fireRate: 16,
-  countDownTime: 0,
-  damage: 2,
-  aimingEnemyId: null,
-  searchEnemy: function(){
+function Tower(){
+  this.width = 32;
+  this.height = 32;
+  this.x = x;
+  this.y = y;
+  this.range = 96;
+  this.fireRate = 16;
+  this.countDownTime = 0;
+  this.damage = 2;
+  this.aimingEnemyId = null;
+  this.searchEnemy = function(){
     for(var i=0;i<enemies.length;i++){
       var distance = Math.sqrt(
         Math.pow(this.x-enemies[i].x,2)+Math.pow(this.y-enemies[i].y,2)
@@ -72,15 +74,15 @@ var tower = {
         this.aimingEnemyId = i;
         this.countDownTime -= 1;
         if(this.countDownTime <= 0 && this.aimingEnemyId != null){
-          this.shoot(this.aimingEnemyId);
+          this.shoot(i);
           this.countDownTime = this.fireRate;
         }
         return;
       }
       this.aimingEnemyId = null;
-    };
-  },
-  shoot: function(id){
+    }
+  };
+  this.shoot = function(id){
     ctx.beginPath(id);
     ctx.moveTo(this.x,this.y);
     ctx.lineTo(enemies[id].x+16,enemies[id].y+16);
@@ -88,7 +90,7 @@ var tower = {
     ctx.lineWidth = 5;
     ctx.stroke();
     enemies[id].hp -= this.damage;
-  },
+  };
 };
 var enemyPath = [
   {x:96,y:448,speedx:0,speedy:0},
@@ -103,7 +105,8 @@ var enemyPath = [
 ];
 var enemy = new Enemy();
 var enemies = [];
-
+var tower = new Tower();
+var towers = [];
 
 var cursor = {x:0,y:0};
 $("#game-canvas").mousemove(function(event){
@@ -116,6 +119,7 @@ $("#game-canvas").mousemove(function(event){
 $("#game-canvas").on("click" , function(){
   if(isCollided(cursor.x,cursor.y,640-64,480-64,64,64)){
     if(isBuilding){
+      towers.push(newTower);
       isBuilding = false;
     }
      else{
@@ -157,12 +161,16 @@ function draw(){
     var newEnemy = new Enemy();
     enemies.push(newEnemy);
   }
-  tower.searchEnemy();
-  if(tower.aimingEnemyId != null){
-    var id = tower.aimingEnemyId;
-    ctx.drawImage(crosshairImg,enemies[id].x,enemies[id].y,32,32);
-  }else{
-    tower.aimingEnemyId = null;
+  for(var i=0;i<=towers.length;i++){
+    towers[i].searchEnemy();
+  }
+  for(var i=0;i<enemies.length;i++){
+    if(tower.aimingEnemyId != null){
+      var id = tower.aimingEnemyId;
+      ctx.drawImage(crosshairImg,enemies[id].x,enemies[id].y,32,32);
+    }else{
+      tower.aimingEnemyId = null;
+    }
   }
    for(var i=0;i<enemies.length;i++){
     if(enemies[i].hp <= 0){
