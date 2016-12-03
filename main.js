@@ -183,8 +183,9 @@ function draw(){
       ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
     }
   }
-  for(var i=0;i<=towers.length&&towers.length!=0;i++){
-    towers[i].searchEnemy();
+  for(var i=1;i<=towers.length;i++){
+    var towerId = i-1;
+    towers[towerId].searchEnemy();
     ctx.drawImage(towerImg,tower.x,tower.y,tower.width,tower.height)
   }
   if(isBuilding){
