@@ -42,19 +42,6 @@ function lifeOfTree(){
     hpColor = "red";
   }
 }
-
-
-var health = 200;
-var hpColor = "white";
-var FPS = 64;
-var clock = 0;
-var btn = {
-  x:578,
-  y:418,
-  width:64,
-  height:64
-};
-var isBuilding = false;
 function Tower(){
   this.width = 32;
   this.height = 32;
@@ -91,6 +78,19 @@ function Tower(){
     ctx.stroke();
     enemies[id].hp -= this.damage;
   };
+};
+
+
+var health = 200;
+var hpColor = "white";
+var FPS = 64;
+var clock = 0;
+var isBuilding = false;
+var btn = {
+  x:578,
+  y:418,
+  width:64,
+  height:64
 };
 var enemyPath = [
   {x:96,y:448,speedx:0,speedy:0},
