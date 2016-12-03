@@ -128,7 +128,7 @@ $("#game-canvas").on("click" , function(){
   }else if(isBuilding){
     for(var i=0;i<=towers.length;i++){
       if(i==towers.length){
-        var towerId = i-1;
+        var towerId = i;
         towers.push(newTower);
         towers[towerId].x = cursor.x-(cursor.x%32);
         towers[towerId].y = cursor.y-(cursor.y%32);
@@ -169,12 +169,14 @@ function draw(){
     enemies.push(newEnemy);
   }
   for(var i=0;i<enemies.length;i++){
-    if(tower.aimingEnemyId != null){
+    for(var t=1;(t-1)<towers.length;t++){
+      if(towers[t-1].aimingEnemyId != null){
       var id = tower.aimingEnemyId;
       ctx.drawImage(crosshairImg,enemies[id].x,enemies[id].y,32,32);
     }else{
       tower.aimingEnemyId = null;
     }
+  }
   }
   for(var i=0;i<enemies.length;i++){
     if(enemies[i].hp <= 0){
