@@ -1,7 +1,9 @@
 var bgImg = document.createElement("img");
 bgImg.src = "images/map.png";
 var btnImg = document.createElement("img");
-btnImg.src = "images/tower-btn.png"
+btnImg.src = "images/tower-btn.png";
+var towerImg = document.createElement("img");
+tower.src = "images/tower.png";
 
 
 var FPS = 20;
@@ -35,6 +37,7 @@ var ctx = canvas.getContext("2d");
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(btnImg,btn.x,btn.y,btn.width,btn.height);
+  ctx.drawImage(towerImgwa)
 };
 
 
