@@ -11,6 +11,19 @@ var btn = {
   width:64,
   height:64
 };
+var isBuilding = false;
+
+
+var cursor = {
+  x:0,
+  y:0
+};
+$("#game-canvas").mousemove(function(event){
+  cursor = {
+    x:event.offsetX,
+    y:event.offsetY
+  };
+});
 
 
 var canvas = document.getElementById("game-canvas");
